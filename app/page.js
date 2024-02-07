@@ -18,7 +18,7 @@ export default function Home() {
 
   async function fetchData (cityName){
     try{
-      const response = await fetch('http://localhost:3000/api/weather?address='+cityName)
+      const response = await fetch('/api/weather?address='+cityName)
       const jsonData = (await response.json()).data;
       setWeatherData(jsonData)
       setCity('');
@@ -29,7 +29,7 @@ export default function Home() {
   }
   async function fetchDataByCordinates (latitude,longitude){
     try{
-      const response = await fetch('http://localhost:3000/api/weather?lat='+latitude+'&lon='+longitude)
+      const response = await fetch('/api/weather?lat='+latitude+'&lon='+longitude)
       const jsonData = (await response.json()).data;
       setWeatherData(jsonData)
       setCity('');
